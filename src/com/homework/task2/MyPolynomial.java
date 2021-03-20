@@ -44,19 +44,19 @@ public class MyPolynomial {
             newCoeffs[i] = this.coeffs[i];
             i++;
         }
-        while ( (i < right.getDegree() + 1)) {
+        while ((i < right.getDegree() + 1)) {
             newCoeffs[i] = right.coeffs[i];
             i++;
         }
         return new MyPolynomial(newCoeffs);
     }
 
-    public MyPolynomial multiply (MyPolynomial right) {
+    public MyPolynomial multiply(MyPolynomial right) {
         double[] newCoeffs = new double[this.getDegree() + right.getDegree() + 1];
 
-        for (int i =0; i < this.coeffs.length; i++)
+        for (int i = 0; i < this.coeffs.length; i++)
             for (int j = 0; j < right.coeffs.length; j++)
-                newCoeffs[i+j] += this.coeffs[i]*right.coeffs[j];
-            return new MyPolynomial(newCoeffs);
+                newCoeffs[i + j] += this.coeffs[i] * right.coeffs[j];
+        return new MyPolynomial(newCoeffs);
     }
 }

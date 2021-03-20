@@ -65,8 +65,7 @@ public class MyComplex {
     public double argument() {
         if (Math.abs(real) < eps && Math.abs(imag) < eps) {
             System.out.println("Cannot find argument of the number 0");
-        }
-        else {
+        } else {
             if (real > 0)
                 return Math.atan(imag / real);
             else if (real < 0 && imag >= 0)
@@ -82,6 +81,7 @@ public class MyComplex {
         this.imag += right.getImag();
         return this;
     }
+
     public MyComplex addNew(MyComplex right) {
         return new MyComplex(this.real + right.getReal(), this.imag + right.getImag());
     }
@@ -96,18 +96,18 @@ public class MyComplex {
         return new MyComplex(this.real - right.getReal(), this.imag - right.getImag());
     }
 
-    public MyComplex multiply (MyComplex right) {
-        double r = this.real*right.getReal() - this.imag*right.getImag();
-        double i = this.real* right.getImag() + this.imag* right.getReal();
+    public MyComplex multiply(MyComplex right) {
+        double r = this.real * right.getReal() - this.imag * right.getImag();
+        double i = this.real * right.getImag() + this.imag * right.getReal();
         this.setValue(r, i);
         return this;
     }
 
     public MyComplex divide(MyComplex right) {
-        double l = this.real*right.getReal() + this.imag*right.getImag();
-        double r = this.imag* right.getReal() - this.real* right.getImag();
+        double l = this.real * right.getReal() + this.imag * right.getImag();
+        double r = this.imag * right.getReal() - this.real * right.getImag();
         double del = Math.pow(right.getReal(), 2) + Math.pow(right.getImag(), 2);
-        this.setValue(l/del, r/del);
+        this.setValue(l / del, r / del);
         return this;
     }
 

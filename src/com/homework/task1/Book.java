@@ -48,7 +48,7 @@ public class Book {
     @Override
     public String toString() {
         String authorArray = "";
-        for (Author a: authors) {
+        for (Author a : authors) {
             authorArray += a.toString();
             if (a != authors[authors.length - 1])
                 authorArray += ", ";

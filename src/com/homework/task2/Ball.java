@@ -13,7 +13,7 @@ public class Ball {
         this.radius = radius;
         double directionInRadians = Math.toRadians(direction);
         this.xDelta = (float) (speed * Math.cos(directionInRadians));
-        this.yDelta = (float) (-1*speed * Math.sin(directionInRadians));
+        this.yDelta = (float) (-1 * speed * Math.sin(directionInRadians));
     }
 
     public float getX() {

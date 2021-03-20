@@ -1,7 +1,9 @@
 package com.homework.task1;
 
 public class MyTriangle {
-    enum type { notTriangle, usual, isosceles,  equilateral};
+    enum type {notTriangle, usual, isosceles, equilateral}
+
+    ;
 
     private MyPoint v1;
     private MyPoint v2;
@@ -39,9 +41,9 @@ public class MyTriangle {
         double b = v2.distance(v3);
         double c = v1.distance(v3);
 
-        if ((v2.getX() - v1.getX())*(v3.getY() - v1.getY()) - (v2.getY() - v1.getY())*(v3.getX() - v1.getX()) == 0)
+        if ((v2.getX() - v1.getX()) * (v3.getY() - v1.getY()) - (v2.getY() - v1.getY()) * (v3.getX() - v1.getX()) == 0)
             return type.notTriangle;
-        else if  ((Math.abs(a - b) < eps) && (Math.abs(a - c) < eps))
+        else if ((Math.abs(a - b) < eps) && (Math.abs(a - c) < eps))
             return type.equilateral;
         else if ((Math.abs(a - b) < eps) || (Math.abs(a - c) < eps) || (Math.abs(b - c) < eps))
             return type.isosceles;
