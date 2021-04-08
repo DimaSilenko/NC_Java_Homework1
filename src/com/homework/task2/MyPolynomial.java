@@ -32,6 +32,13 @@ public class MyPolynomial {
         return result;
     }
 
+    private void dropCoeffs(MyPolynomial polynomial, int i, double[] newCoeffs) {
+        while (i < polynomial.getDegree() + 1) {
+            newCoeffs[i] = polynomial.coeffs[i];
+            i++;
+        }
+    }
+
     public MyPolynomial add(MyPolynomial right) {
         int maxDegree = Math.max(this.getDegree(), right.getDegree());
         double[] newCoeffs = new double[maxDegree + 1];
@@ -40,14 +47,11 @@ public class MyPolynomial {
             newCoeffs[i] = this.coeffs[i] + right.coeffs[i];
             i++;
         }
-        while (i < this.getDegree() + 1) {
-            newCoeffs[i] = this.coeffs[i];
-            i++;
-        }
-        while ((i < right.getDegree() + 1)) {
-            newCoeffs[i] = right.coeffs[i];
-            i++;
-        }
+
+        dropCoeffs(this, i, newCoeffs);
+
+        dropCoeffs(right, i, newCoeffs);
+
         return new MyPolynomial(newCoeffs);
     }
 
